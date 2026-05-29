@@ -3,20 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { LeadProvider, useLeads } from './context/LeadContext';
 import HeroSection from './components/HeroSection';
-import TrustSection from './components/TrustSection';
-import WhyInvestSection from './components/WhyInvestSection';
-import PropertyDetailSection from './components/PropertyDetailSection';
-import LocationSection from './components/LocationSection';
-import FaqSection from './components/FaqSection';
-import FooterSection from './components/FooterSection';
-import WhatsappButton from './components/WhatsappButton';
-import AdminLeads from './components/AdminLeads';
-import InfoModal from './components/InfoModal';
-import ThankYouSection from './components/ThankYouSection';
 import { Sparkles, Phone } from 'lucide-react';
+
+const TrustSection = lazy(() => import('./components/TrustSection'));
+const WhyInvestSection = lazy(() => import('./components/WhyInvestSection'));
+const PropertyDetailSection = lazy(() => import('./components/PropertyDetailSection'));
+const LocationSection = lazy(() => import('./components/LocationSection'));
+const FaqSection = lazy(() => import('./components/FaqSection'));
+const FooterSection = lazy(() => import('./components/FooterSection'));
+const WhatsappButton = lazy(() => import('./components/WhatsappButton'));
+const AdminLeads = lazy(() => import('./components/AdminLeads'));
+const InfoModal = lazy(() => import('./components/InfoModal'));
+const ThankYouSection = lazy(() => import('./components/ThankYouSection'));
 
 function MainAppContent() {
   const { currentLead, clearCurrentLead } = useLeads();
@@ -49,13 +50,15 @@ function MainAppContent() {
   // If a lead was successfully captured, transition directly to the Thank You Page!
   if (currentLead) {
     return (
-      <ThankYouSection 
-        leadName={currentLead.name} 
-        onBack={() => {
-          clearCurrentLead();
-          window.scrollTo({ top: 0, behavior: 'instant' });
-        }} 
-      />
+      <Suspense fallback={<div className="min-h-screen bg-forest-dark" />}>
+        <ThankYouSection 
+          leadName={currentLead.name} 
+          onBack={() => {
+            clearCurrentLead();
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          }} 
+        />
+      </Suspense>
     );
   }
 
@@ -122,41 +125,45 @@ function MainAppContent() {
           preselectedProperty={preselectedProperty}
         />
 
-        {/* TRUST BOARD (Creators & Signatures) */}
-        <TrustSection />
+        <Suspense fallback={<div className="h-24 bg-forest-dark" />}>
+          {/* TRUST BOARD (Creators & Signatures) */}
+          <TrustSection />
 
-        {/* LAZER COMPLETO SECTIONS */}
-        <WhyInvestSection />
+          {/* LAZER COMPLETO SECTIONS */}
+          <WhyInvestSection />
 
-        {/* PLANTAS INTERATIVAS & DECORADOS */}
-        <PropertyDetailSection onPropertySelect={handlePropertySelect} />
+          {/* PLANTAS INTERATIVAS & DECORADOS */}
+          <PropertyDetailSection onPropertySelect={handlePropertySelect} />
 
-        {/* CITY AND IBIRAPUERA LIFESTYLE / MAP LOCATION */}
-        <LocationSection />
+          {/* CITY AND IBIRAPUERA LIFESTYLE / MAP LOCATION */}
+          <LocationSection />
 
-        {/* FAQ ACCORDION PANEL */}
-        <FaqSection />
+          {/* FAQ ACCORDION PANEL */}
+          <FaqSection />
+        </Suspense>
       </main>
 
-      {/* STATIC FOOTER */}
-      <FooterSection 
-        onOpenAdmin={() => setIsAdminOpen(true)}
-        onOpenPrivacy={openInfoModal}
-      />
+      <Suspense fallback={<div />}>
+        {/* STATIC FOOTER */}
+        <FooterSection 
+          onOpenAdmin={() => setIsAdminOpen(true)}
+          onOpenPrivacy={openInfoModal}
+        />
 
-      {/* FLOATING INTERACTIVE TELEPHONE COMPONENT */}
-      <WhatsappButton />
+        {/* FLOATING INTERACTIVE TELEPHONE COMPONENT */}
+        <WhatsappButton />
 
-      {/* HIDDEN DEVELOPMENT DEMO CONSOLE MODAL FOR LEADS TRACKS */}
-      <AdminLeads isOpen={isAdminOpen} onClose={() => setIsAdminOpen(false)} />
+        {/* HIDDEN DEVELOPMENT DEMO CONSOLE MODAL FOR LEADS TRACKS */}
+        <AdminLeads isOpen={isAdminOpen} onClose={() => setIsAdminOpen(false)} />
 
-      {/* INFO DISPLAY FOR TERMS & POLICIES */}
-      <InfoModal 
-        isOpen={isInfoOpen} 
-        onClose={() => setIsInfoOpen(false)} 
-        title={infoTitle} 
-        content={infoContent} 
-      />
+        {/* INFO DISPLAY FOR TERMS & POLICIES */}
+        <InfoModal 
+          isOpen={isInfoOpen} 
+          onClose={() => setIsInfoOpen(false)} 
+          title={infoTitle} 
+          content={infoContent} 
+        />
+      </Suspense>
 
     </div>
   );

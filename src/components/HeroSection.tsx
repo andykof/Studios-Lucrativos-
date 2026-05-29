@@ -102,7 +102,7 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
   return (
     <section id="hero" className="relative min-h-[100vh] md:min-h-screen flex items-center bg-forest-dark overflow-hidden py-24 md:py-16 px-4 sm:px-6 md:px-8">
       {/* Background Graphic representing premium urban and architecture focus */}
-      <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full z-0">
+      <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full z-0 md:hidden">
         <picture>
           <source media="(max-width: 640px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w800" />
           <source media="(max-width: 1024px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w1600" />
