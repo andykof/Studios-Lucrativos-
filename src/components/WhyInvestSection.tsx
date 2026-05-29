@@ -74,7 +74,7 @@ export default function WhyInvestSection() {
                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center"
               >
                 {/* Visual Media with high fidelity overlay labels (similar to photo layout) */}
-                <div className={`lg:col-span-8 relative rounded-md overflow-hidden shadow-xl aspect-square sm:aspect-[4/3] md:aspect-[16/9] bg-forest-dark border border-slate-200 ${
+                <div className={`lg:col-span-8 relative rounded-md overflow-hidden shadow-xl aspect-video sm:aspect-[4/3] md:aspect-[16/9] bg-forest-dark border border-slate-200 ${
                   isEven ? 'lg:order-1' : 'lg:order-2'
                 }`}>
                   {unit.id === 'uniko-infra' ? (

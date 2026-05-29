@@ -39,7 +39,7 @@ export default function TrustSection() {
               className="group bg-white border border-slate-200/60 rounded-sm overflow-hidden shadow-sm hover:shadow-md hover:border-accent/40 transition-all duration-300 flex flex-col sm:flex-col justify-start sm:justify-between items-center sm:items-stretch"
             >
               {/* Photo representation in Black & White */}
-              <div className="relative overflow-hidden w-full aspect-[4/3] sm:aspect-[3/4] bg-slate-100">
+              <div className="relative overflow-hidden w-full aspect-[4/5] sm:aspect-[3/4] bg-slate-100">
                 <img
                   src={author.image}
                   alt={author.name}

@@ -127,19 +127,19 @@ export default function FooterSection({ onOpenAdmin, onOpenPrivacy }: FooterSect
               src="https://drive.google.com/thumbnail?id=182pxUO-H2meqOc8C1mELz_fGcEiVQTzW&sz=w800" 
               alt="Logo Parceiro 1" 
               referrerPolicy="no-referrer"
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform hover:scale-105"
+              className="h-16 md:h-20 lg:h-24 w-auto max-w-full object-contain transition-transform hover:scale-105"
             />
             <img 
               src="https://drive.google.com/thumbnail?id=1N8vceHh9yzE-Rhrj8cQX4qQNcGW_72y2&sz=w800" 
               alt="Logo Parceiro 2" 
               referrerPolicy="no-referrer"
-              className="h-16 md:h-20 lg:h-28 w-auto object-contain transition-transform hover:scale-105"
+              className="h-16 md:h-20 lg:h-28 w-auto max-w-full object-contain transition-transform hover:scale-105"
             />
             <img 
               src="https://drive.google.com/thumbnail?id=1QnGofhoMyn_kc0PPGhD_9QpEDts2WQDg&sz=w800" 
               alt="Logo Parceiro 3" 
               referrerPolicy="no-referrer"
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform hover:scale-105"
+              className="h-16 md:h-20 lg:h-24 w-auto max-w-full object-contain transition-transform hover:scale-105"
             />
           </div>
         </div>
