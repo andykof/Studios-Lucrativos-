@@ -101,8 +101,8 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
 
   return (
     <section id="hero" className="relative min-h-[100vh] md:min-h-screen flex items-center bg-forest-dark overflow-hidden py-24 md:py-16 px-4 sm:px-6 md:px-8">
-      {/* Background Graphic representing premium urban and architecture focus */}
-      <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full z-0 md:hidden">
+      {/* Background Graphic representing premium urban and architecture focus - MOBILE ONLY */}
+      <div className="absolute top-0 left-0 w-full h-[75vh] z-0 md:hidden">
         <picture>
           <source media="(max-width: 640px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w800" />
           <source media="(max-width: 1024px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w1600" />
@@ -112,18 +112,29 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
             referrerPolicy="no-referrer"
             fetchPriority="high"
             loading="eager"
-            className="w-full h-full object-contain object-top md:object-center"
+            className="w-full h-full object-contain object-top"
           />
         </picture>
         {/* Custom balanced dark masking: solid transparent layer + subtle direction gradients */}
-        <div className="absolute inset-0 bg-forest-dark/40 md:bg-forest-dark/10" />
-        
-        {/* Desktop Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/50 to-transparent hidden md:block" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-forest-dark/80 hidden md:block" />
-        
+        <div className="absolute inset-0 bg-forest-dark/40" />
         {/* Mobile Gradients for smooth transition into the tall content area */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/50 to-transparent md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/50 to-transparent" />
+      </div>
+
+      {/* Background Graphic representing premium urban focus - DESKTOP ONLY */}
+      <div className="absolute inset-0 z-0 hidden md:block select-none pointer-events-none">
+        <img
+          src="https://offloadmedia.feverup.com/saopaulosecreto.com/wp-content/uploads/2020/07/19075110/%40andreiamarzola-819x1024.jpg"
+          alt="São Paulo Vista Aérea"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
+          loading="eager"
+          className="w-full h-full object-cover opacity-15 filter brightness-[0.35]"
+        />
+        {/* Multi-layered custom overlays for absolute protection of text content */}
+        <div className="absolute inset-0 bg-forest-dark/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark via-forest-dark/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-transparent to-forest-dark/95" />
       </div>
 
       {/* Dynamic Gold Light Orbs */}
