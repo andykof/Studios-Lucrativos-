@@ -107,7 +107,7 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
            src="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w2500"
           alt="Studios Lucrativos Sao Paulo"
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-top md:object-center"
+          className="w-full h-full object-contain object-top md:object-center"
         />
         {/* Custom balanced dark masking: solid transparent layer + subtle direction gradients */}
         <div className="absolute inset-0 bg-forest-dark/40 md:bg-forest-dark/10" />
