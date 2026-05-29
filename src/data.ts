@@ -99,7 +99,7 @@ export const PROPERTIES: Property[] = [
       'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80'
     ],
-    whatsappText: 'Olá! Gostaria de falar com o corretor VIP sobre o VERUS Mackenzie. Qual o desconto ou fluxo exclusivo para pagamento à vista ou na compra de 2 unidades?'
+    whatsappText: 'Olá! Gostaria de falar com o consultor oficial sobre o VERUS Mackenzie. Qual o desconto ou fluxo exclusivo para pagamento à vista ou na compra de 2 unidades?'
   }
 ];
 

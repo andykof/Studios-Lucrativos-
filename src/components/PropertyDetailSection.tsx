@@ -92,6 +92,7 @@ export default function PropertyDetailSection({ onPropertySelect }: PropertyDeta
                     src={selectedPlan.image}
                     alt={selectedPlan.title}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                     className="w-full h-full object-contain p-1"
                   />
                   <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-accent text-forest-dark px-2 py-0.5 text-[8.5px] font-bold tracking-[0.1em] uppercase rounded-xs font-mono shadow-md">
@@ -196,12 +197,12 @@ export default function PropertyDetailSection({ onPropertySelect }: PropertyDeta
             {/* Plan switcher manual buttons navigation */}
             <div className="flex items-center gap-4 pt-6 sm:pt-4 w-full">
               <a
-                href={`https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20Técnico%20e%20Memorial%20com%20Oportunidades%20VIP%20da%20planta%20${encodeURIComponent(selectedPlan.title)}.`}
+                href={`https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20Técnico%20e%20Memorial%20com%20Condições%20Exclusivas%20da%20planta%20${encodeURIComponent(selectedPlan.title)}.`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-4 md:py-4 px-6 bg-accent hover:bg-accent-hover text-forest-dark text-xs sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-wider rounded-sm text-center shadow-lg transition-transform active:scale-95 cursor-pointer font-montserrat"
               >
-                Receber Book Técnico e Memorial VIP
+                Receber Book Técnico e Memorial Descritivo
               </a>
             </div>
           </div>

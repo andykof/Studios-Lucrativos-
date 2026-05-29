@@ -26,7 +26,7 @@ export default function AdminLeads({ isOpen, onClose }: AdminLeadsProps) {
 
   const formatWhatsAppLink = (phone: string, name: string) => {
     const cleanPhone = phone.replace(/\D/g, '');
-    const message = `Olá ${name}! Vi seu interesse nos Studios Lucrativos do Grupo Kallas e gostaria de te enviar nossa tabela VIP e simulação de parcelas. Podemos falar agora?`;
+    const message = `Olá ${name}! Vi seu interesse nos Studios Lucrativos do Grupo Kallas e gostaria de te enviar nossa tabela de lançamento e simulação de parcelas. Podemos falar agora?`;
     return `https://wa.me/55${cleanPhone}?text=${encodeURIComponent(message)}`;
   };
 

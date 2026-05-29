@@ -103,12 +103,18 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
     <section id="hero" className="relative min-h-[100vh] md:min-h-screen flex items-center bg-forest-dark overflow-hidden py-24 md:py-16 px-4 sm:px-6 md:px-8">
       {/* Background Graphic representing premium urban and architecture focus */}
       <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full z-0">
-        <img
-           src="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w2500"
-          alt="Studios Lucrativos Sao Paulo"
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-contain object-top md:object-center"
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w800" />
+          <source media="(max-width: 1024px)" srcSet="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w1600" />
+          <img
+            src="https://drive.google.com/thumbnail?id=1X6EvakplOf_jL_tWJfyhNll-5SFlE9dy&sz=w2500"
+            alt="Studios Lucrativos Sao Paulo"
+            referrerPolicy="no-referrer"
+            fetchPriority="high"
+            loading="eager"
+            className="w-full h-full object-contain object-top md:object-center"
+          />
+        </picture>
         {/* Custom balanced dark masking: solid transparent layer + subtle direction gradients */}
         <div className="absolute inset-0 bg-forest-dark/40 md:bg-forest-dark/10" />
         
@@ -131,6 +137,11 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
           
           {/* Central Title and SEO Optimized heading */}
           <div className="space-y-4 text-left pt-12 md:pt-0">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="bg-accent/10 border border-accent/30 text-accent text-[9px] md:text-[10px] font-black uppercase tracking-widest py-1.5 px-3 md:px-4 rounded-full font-montserrat flex items-center gap-1.5 shadow-sm">
+                <Shield size={12} className="shrink-0" /> Canal Oficial de Vendas
+              </span>
+            </div>
             <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight font-serif leading-[1.1] md:leading-[1.15]">
               Desvende o Segredo dos Investidores de Sucesso: <br className="hidden md:block" />
               <span className="font-extrabold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-accent">
@@ -138,7 +149,7 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
               </span> com Rentabilidade Garantida em SP.
             </h1>
             <p className="text-slate-300 text-[15px] sm:text-sm md:text-base max-w-xl leading-relaxed font-sans font-light pt-2">
-              Maximize seu Patrimônio com Imóveis Compactos Kallas, estrategicamente localizados para Short Stay e valorização exponencial. Descubra as oportunidades UNIKO e VERUS.
+              Somos a <strong className="text-white font-bold">parceria oficial de vendas</strong> Kallas. Fale com nossa <strong className="text-accent font-bold">consultoria especializada</strong> e garanta acesso a <strong className="text-white font-bold">condições exclusivas de lançamento</strong>. Maximize seu patrimônio com o portfólio restrito UNIKO e VERUS.
             </p>
           </div>
           
@@ -354,7 +365,7 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
                   </>
                 ) : (
                   <>
-                    <span>Quero Receber Book de Dividendos</span>
+                    <span>QUERO RECEBER O MEMORIAL DESCRITIVO</span>
                     <ArrowRight size={16} className="shrink-0" />
                   </>
                 )}

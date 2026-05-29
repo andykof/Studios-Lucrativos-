@@ -13,7 +13,7 @@ interface ThankYouSectionProps {
 }
 
 export default function ThankYouSection({ leadName, onBack }: ThankYouSectionProps) {
-  const whatsappUrl = "https://wa.me/5511959568043?text=Olá!%20Preenchi%20o%20cadastro%20VIP%20no%20site%20da%20Studios%20Lucrativos%20e%20gostaria%20de%20receber%20as%20tabelas%20de%20lançamento%25.";
+  const whatsappUrl = "https://wa.me/5511959568043?text=Olá!%20Preenchi%20o%20cadastro%20no%20site%20da%20Studios%20Lucrativos%20e%20gostaria%20de%20receber%20as%20tabelas%20de%20lançamento%25.";
 
   return (
     <div id="thank-you-view" className="min-h-screen bg-forest-dark text-slate-100 flex flex-col justify-between selection:bg-accent/30 selection:text-white">
@@ -58,7 +58,7 @@ export default function ThankYouSection({ leadName, onBack }: ThankYouSectionPro
             {leadName ? `Excelente, ${leadName.split(' ')[0]}!` : 'Excelente!'}
           </h1>
           <p className="text-lg font-montserrat font-bold text-accent uppercase tracking-wide mb-3">
-            Recebemos seu cadastro VIP
+            Recebemos seu cadastro oficial
           </p>
 
           {/* Sub-headline */}

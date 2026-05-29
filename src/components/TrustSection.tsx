@@ -44,6 +44,7 @@ export default function TrustSection() {
                   src={author.image}
                   alt={author.name}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105"
                 />
                 {/* Subtle gradient overlay */}

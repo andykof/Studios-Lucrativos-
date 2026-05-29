@@ -98,7 +98,7 @@ export default function FaqSection() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider bg-accent hover:bg-accent-hover text-forest-dark py-4 sm:py-3.5 px-6 rounded-sm transition-colors cursor-pointer font-montserrat shadow-md"
           >
             <MessageSquare size={16} sm:size={14} className="shrink-0" />
-            <span className="text-center whitespace-nowrap">Falar Especialista</span>
+            <span className="text-center whitespace-nowrap">Falar com corretor</span>
           </a>
         </div>
 

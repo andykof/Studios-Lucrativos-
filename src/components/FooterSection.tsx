@@ -79,7 +79,7 @@ export default function FooterSection({ onOpenAdmin, onOpenPrivacy }: FooterSect
                 </a>
               </li>
               <li className="text-slate-500 text-[10px] font-sans">
-                Atendimento online via WhatsApp disponível. Para agendamento presencial no estande de vendas, fale diretamente com nossa assessoria VIP.
+                Atendimento online via WhatsApp disponível. Para agendamento presencial no estande de vendas, fale diretamente com nossa consultoria especializada.
               </li>
             </ul>
           </div>
@@ -127,18 +127,21 @@ export default function FooterSection({ onOpenAdmin, onOpenPrivacy }: FooterSect
               src="https://drive.google.com/thumbnail?id=182pxUO-H2meqOc8C1mELz_fGcEiVQTzW&sz=w800" 
               alt="Logo Parceiro 1" 
               referrerPolicy="no-referrer"
+              loading="lazy"
               className="h-16 md:h-20 lg:h-24 w-auto max-w-full object-contain transition-all hover:scale-105 brightness-0 invert opacity-70 hover:opacity-100"
             />
             <img 
               src="https://drive.google.com/thumbnail?id=1N8vceHh9yzE-Rhrj8cQX4qQNcGW_72y2&sz=w800" 
               alt="Logo Verus" 
               referrerPolicy="no-referrer"
+              loading="lazy"
               className="h-16 md:h-20 lg:h-28 w-auto max-w-full object-contain transition-all hover:scale-105 brightness-0 invert opacity-70 hover:opacity-100"
             />
             <img 
               src="https://drive.google.com/thumbnail?id=1QnGofhoMyn_kc0PPGhD_9QpEDts2WQDg&sz=w800" 
               alt="Logo Parceiro 3" 
               referrerPolicy="no-referrer"
+              loading="lazy"
               className="h-16 md:h-20 lg:h-24 w-auto max-w-full object-contain transition-all hover:scale-105 brightness-0 invert opacity-70 hover:opacity-100"
             />
           </div>

@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export default function WhatsappButton() {
   const [showTooltip, setShowTooltip] = useState(false);
-  const whatsappUrl = "https://wa.me/5511959568043?text=Olá!%20Estava%20navegando%20no%20site%20da%20Studios%20Lucrativos%20e%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20as%20plantas.";
+  const whatsappUrl = "https://wa.me/5511959568043?text=Olá!%20Estava%20navegando%20no%20site%20da%20Studios%20Lucrativos%20e%20gostaria%20de%20falar%20com%20um%20corretor%20sobre%20as%20plantas.";
 
   useEffect(() => {
     // Show tooltips briefly after load to grab attention
@@ -39,7 +39,7 @@ export default function WhatsappButton() {
           >
             <div className="text-left font-sans">
               <span className="block font-bold text-emerald-600 font-montserrat">Studios Lucrativos</span>
-              <span className="text-[11px] text-text-muted font-medium">Fale com nosso corretor VIP</span>
+              <span className="text-[11px] text-text-muted font-medium">Fale com nossa consultoria</span>
             </div>
             <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse ml-2" />
           </motion.div>

@@ -92,6 +92,7 @@ export default function WhyInvestSection() {
                         src={unit.image}
                         alt={unit.title}
                         referrerPolicy="no-referrer"
+                        loading="lazy"
                         className="w-full h-full object-cover filter brightness-[0.8] sm:brightness-[0.9] hover:brightness-100 transition-all duration-700 hover:scale-105"
                       />
                       {/* Glass Card Overlay reflecting the information blocks in the screenshot */}
@@ -152,7 +153,7 @@ export default function WhyInvestSection() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20os%20studios%20disponíveis."
+            href="https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20falar%20com%20um%20corretor%20sobre%20os%20studios%20disponíveis."
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto inline-flex justify-center items-center sm:inline-block px-8 sm:px-12 py-4 sm:py-5 bg-forest text-white hover:bg-forest-light text-xs sm:text-sm font-bold font-montserrat uppercase tracking-[0.15em] sm:tracking-[0.2em] rounded-sm shadow-lg hover:shadow-xl transition-all cursor-pointer"

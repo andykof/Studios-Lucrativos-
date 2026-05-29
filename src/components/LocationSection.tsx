@@ -177,7 +177,7 @@ export default function LocationSection() {
               className="w-full mt-10 md:mt-8 py-4 sm:py-3.5 bg-forest hover:bg-forest-light text-white text-xs font-bold font-montserrat uppercase tracking-[0.1em] sm:tracking-[0.15em] rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md"
             >
               <Navigation size={15} sm:size={13} className="fill-white shrink-0" />
-              <span>Solicitar Book e Payback</span>
+              <span>FALE COM O CORRETOR</span>
             </a>
           </div>
 
