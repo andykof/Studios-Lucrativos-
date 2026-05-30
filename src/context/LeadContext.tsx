@@ -40,28 +40,6 @@ export function LeadProvider({ children }: { children: React.ReactNode }) {
   };
 
   const addLead = async (leadData: Omit<Lead, 'id' | 'createdAt' | 'status'>) => {
-    // API endpoint for Google Apps Script Webhook
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3Rf1gLdrfH0wkwxoSMV-ulBnv48j5S6udUZckby0KPv9iK3EbTVbzUwnn6b53pRuyJA/exec";
-
-    try {
-      const formData = new URLSearchParams();
-      formData.append('nome', leadData.name);
-      formData.append('email', leadData.email);
-      formData.append('telefone', leadData.phone);
-      formData.append('interesse', leadData.propertyInterest);
-
-      await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-        mode: 'no-cors',
-      });
-    } catch (error) {
-      console.error("Erro ao enviar lead via Webhook:", error);
-    }
-
     const newLead: Lead = {
       ...leadData,
       id: `lead_${Date.now()}`,

@@ -84,6 +84,33 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
         phone: phone.trim(),
         propertyInterest: `${interest === 'uniko' ? 'UNIKO Vila Olímpia' : interest === 'verus' ? 'VERUS Mackenzie' : 'Ambos os Projetos'} (Preferência: ${contactPreference})`,
       });
+
+      // WhatsApp Dynamic URL composition
+      const propertyLabel = interest === 'uniko' 
+        ? 'UNIKO Vila Olímpia' 
+        : interest === 'verus' 
+          ? 'VERUS Mackenzie' 
+          : 'Ambos os Projetos';
+
+      const preferenceLabel = contactPreference === 'whatsapp' 
+        ? 'WhatsApp' 
+        : contactPreference === 'phone' 
+          ? 'Ligação' 
+          : 'E-mail';
+
+      const whatsappMessage = `Olá! Quero falar com um corretor sobre os Studios Lucrativos. Seguem meus dados do formulário:
+
+👤 *Nome:* ${name.trim()}
+✉️ *E-mail:* ${email.trim()}
+📞 *Telefone:* ${phone.trim()}
+🏢 *Ativo de Interesse:* ${propertyLabel}
+💬 *Preferência de Contato:* ${preferenceLabel}`;
+
+      const whatsappUrl = `https://wa.me/5511959568043?text=${encodeURIComponent(whatsappMessage)}`;
+      
+      // Open WhatsApp in a new tab/window
+      window.open(whatsappUrl, '_blank');
+
       onSuccess(name.trim());
     } catch (err) {
       console.error(err);
@@ -129,12 +156,11 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
           referrerPolicy="no-referrer"
           fetchPriority="high"
           loading="eager"
-          className="w-full h-full object-cover opacity-15 filter brightness-[0.35]"
+          className="w-full h-full object-cover opacity-[0.65] filter brightness-[0.85]"
         />
-        {/* Multi-layered custom overlays for absolute protection of text content */}
-        <div className="absolute inset-0 bg-forest-dark/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark via-forest-dark/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/95 via-transparent to-forest-dark/95" />
+        {/* Fine-tuned directional overlays: transition to solid dark on the left for maximum text contrast, fading out to expose the gorgeous skyline on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-dark via-forest-dark/70 to-forest-dark/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-forest-dark/50" />
       </div>
 
       {/* Dynamic Gold Light Orbs */}
