@@ -379,11 +379,50 @@
         .hero-subtitle {
             font-family: var(--font-body);
             color: var(--color-gold);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-price {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-price span {
+            color: var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+            padding-bottom: 2px;
+        }
+
+        .hero-desc {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 440px;
+            margin: 0 auto 1.5rem auto;
+            line-height: 1.5;
+        }
+
+        @media (min-width: 992px) {
+            .hero-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .hero-price {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .hero-desc {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
         }
 
         /* Media Query para layout Desktop - 100% Split Exact */
@@ -778,7 +817,9 @@
         <div id="hero-uniko" class="hero-split">
             <div class="hero-content">
                 <h1 class="hero-title">Uniko Vila<br>Olímpia</h1>
-                <p class="hero-subtitle">Alta Rentabilidade</p>
+                <p class="hero-subtitle">Rentabilidade Short-Stay Explosiva</p>
+                <div class="hero-price">Apenas <span>R$ 15.500/m²</span></div>
+                <p class="hero-desc">O metro quadrado mais barato da Vila Olímpia. Multiplique seu patrimônio investindo no coração corporativo de São Paulo com altíssima taxa de ocupação.</p>
                 <button class="btn" onclick="app.openModal('uniko')">Conheça Mais</button>
             </div>
         </div>
@@ -787,7 +828,9 @@
         <div id="hero-verus" class="hero-split">
             <div class="hero-content">
                 <h1 class="hero-title">Verus<br>Mackenzie</h1>
-                <p class="hero-subtitle">Localização Premium</p>
+                <p class="hero-subtitle">Renda Passiva Consistente e Segura</p>
+                <div class="hero-price">Apenas <span>R$ 13.900/m²</span></div>
+                <p class="hero-desc">Gere lucros imobiliários consistentes no eixo que mais aluga em SP. A poucos minutos do Mackenzie, PUC-SP e Santa Casa — vacância praticamente zero.</p>
                 <button class="btn" onclick="app.openModal('verus')">Conheça Mais</button>
             </div>
         </div>
