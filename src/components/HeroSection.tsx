@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLeads } from '../context/LeadContext';
 import { motion } from 'motion/react';
-import { Shield, Sparkles, AlertCircle, ArrowRight, Loader2, Sparkle, Calendar, Phone } from 'lucide-react';
+import { Shield, Sparkles, AlertCircle, ArrowRight, Loader2, Sparkle, Calendar, Phone, ChevronDown } from 'lucide-react';
 
 interface HeroSectionProps {
   onSuccess: (name: string) => void;
@@ -167,129 +167,88 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
       <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-accent/10 md:bg-accent/5 blur-3xl rounded-full pointer-events-none" />
 
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center pt-8 md:pt-12">
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center space-y-10 pt-8 md:pt-12 pb-12">
         
-        {/* Left Specification Column + Monumental Headings */}
-        <div className="lg:col-span-7 flex flex-col justify-center h-full space-y-8 md:space-y-12">
+        {/* Top Centered Section: Copy, Badges & CTA */}
+        <div className="flex flex-col items-center space-y-4 max-w-3xl w-full px-4">
           
-          {/* Central Title and SEO Optimized heading */}
-          <div className="space-y-4 text-left pt-12 md:pt-0">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="bg-accent/10 border border-accent/30 text-accent text-[9px] md:text-[10px] font-black uppercase tracking-widest py-1.5 px-3 md:px-4 rounded-full font-montserrat flex items-center gap-1.5 shadow-sm">
-                <Shield size={12} className="shrink-0" /> Canal Oficial de Vendas
-              </span>
-            </div>
-            <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight font-serif leading-[1.1] md:leading-[1.15]">
-              Sua Próxima Grande Oportunidade: <br className="hidden md:block" />
-              <span className="font-extrabold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-accent">
-                Studios de Alto Padrão
-              </span> nos Polos de Maior Demanda de SP.
-            </h1>
-            <p className="text-slate-300 text-[15px] sm:text-sm md:text-base max-w-xl leading-relaxed font-sans font-light pt-2">
-              Somos a <strong className="text-white font-bold">parceria oficial de vendas</strong> Kallas. Fale com nossa <strong className="text-accent font-bold">consultoria especializada</strong> e garanta acesso a <strong className="text-white font-bold">condições exclusivas de lançamento</strong>. Fortaleça seu patrimônio com o portfólio restrito UNIKO e VERUS.
-            </p>
-          </div>
-          
-          {/* Header specification grid focusing on critical ICP metrics */}
-          <div className="space-y-4 md:space-y-5 font-sans text-left max-w-2xl">
-            {/* UNIKO Block */}
-            <div className="flex flex-col space-y-2.5 bg-forest-dark/60 backdrop-blur-sm p-5 md:p-6 rounded-md border border-accent/20 md:border-forest-light/40 shadow-sm transition-all hover:border-accent/50">
-              <h3 className="text-base sm:text-lg md:text-xl font-black font-montserrat tracking-tight text-accent leading-snug">
-                UNIKO Vila Olímpia: Posicionamento Inteligente no Centro Corporativo.
-              </h3>
-              <p className="text-[13px] md:text-sm text-slate-300 font-light leading-relaxed">
-                <span className="font-bold text-white">A partir de R$ 275k.</span> Posicione seu patrimônio no coração financeiro de São Paulo. A forte demanda corporativa na região oferece excelente potencial para locação por temporada (short stay) e liquidez em uma das localizações mais disputadas da cidade.
-              </p>
-              <button 
-                onClick={() => scrollToSection('plantas')} 
-                className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-accent hover:text-white uppercase tracking-widest font-montserrat transition-colors pt-1"
-              >
-                Conheça o UNIKO <ArrowRight size={14} />
-              </button>
-            </div>
-            
-            {/* VERUS Block */}
-            <div className="flex flex-col space-y-2.5 bg-forest-dark/60 backdrop-blur-sm p-5 md:p-6 rounded-md border border-slate-300/20 md:border-forest-light/40 shadow-sm transition-all hover:border-slate-300/50">
-              <h3 className="text-base sm:text-lg md:text-xl font-black font-montserrat tracking-tight text-white leading-snug">
-                VERUS Mackenzie: Custo-Benefício Premium no Eixo Higienópolis.
-              </h3>
-              <p className="text-[13px] md:text-sm text-slate-300 font-light leading-relaxed">
-                <span className="font-bold text-accent">R$ 13.900 o m².</span> Adquira um ativo imobiliário estratégico, vizinho do Mackenzie, PUC-SP e complexos hospitalares. Uma região madura que combina alta demanda residencial de locação e valorização de longo prazo.
-              </p>
-              <button 
-                onClick={() => scrollToSection('plantas')} 
-                className="inline-flex items-center gap-1.5 text-[11px] md:text-xs font-bold text-slate-200 hover:text-accent uppercase tracking-widest font-montserrat transition-colors pt-1"
-              >
-                Explore o VERUS <ArrowRight size={14} />
-              </button>
-            </div>
+          <div className="flex items-center justify-center gap-2">
+            <span className="bg-accent/10 border border-accent/25 text-accent text-[9px] md:text-[10px] font-black uppercase tracking-widest py-1 px-3 rounded-full font-montserrat flex items-center gap-1.5 shadow-sm">
+              <Shield size={11} className="shrink-0" /> Canal de Vendas Oficial
+            </span>
           </div>
 
-          <div className="flex text-left pt-2 md:pt-4">
-            <button
-              onClick={() => scrollToSection('form-contato')}
-              className="w-full md:w-auto px-8 py-4 sm:py-3.5 bg-accent hover:bg-accent-hover text-forest-dark text-xs sm:text-sm font-extrabold font-montserrat uppercase tracking-wider transition-all cursor-pointer rounded-sm shadow-xl"
+          <h1 className="text-[36px] sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-none uppercase font-montserrat">
+            Uniko Vila Olímpia
+          </h1>
+
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold font-montserrat text-slate-300">
+            O menor valor da região: <span className="text-accent underline decoration-accent/50 underline-offset-4">R$ 15.500/m²</span>
+          </div>
+
+          <p className="text-slate-300 text-sm md:text-base leading-relaxed font-sans font-light max-w-xl">
+            Invista com inteligência na Vila Olímpia, no coração financeiro de SP. Studios de alto padrão com altíssima procura por aluguel corporativo e temporada (short-stay).
+          </p>
+
+          <div className="pt-2 w-full sm:w-auto flex flex-col items-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.02, boxShadow: '0 0 12px rgba(196, 164, 125, 0.4)' }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => scrollToSection('lead-form-box')}
+              className="w-full sm:w-auto px-8 py-3 bg-accent hover:bg-accent-hover text-forest-dark font-extrabold tracking-wider text-xs uppercase cursor-pointer rounded-sm shadow-xl flex items-center justify-center gap-2 font-montserrat transition-all"
             >
-              Descubra seu Próximo Investimento Lucrativo
+              Falar com nossos corretores <ArrowRight size={14} />
+            </motion.button>
+            
+            {/* Scroll down indicator linking to action */}
+            <button 
+              onClick={() => scrollToSection('tour-section')}
+              className="group text-[11px] font-medium text-accent hover:text-white uppercase tracking-widest font-montserrat flex flex-col items-center gap-1 transition-colors mt-2 cursor-pointer"
+            >
+              <span>Explore o Tour Virtual 360° Abaixo</span>
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                <ChevronDown size={14} className="text-accent group-hover:text-white" />
+              </motion.div>
             </button>
           </div>
+
         </div>
 
-        {/* Right Conversion Lead Form - Gold Glassmorphism design suitable for high net worth buyers */}
-        <div id="form-contato" className="lg:col-span-5 relative mt-8 lg:mt-0 pb-12 md:pb-0">
+        {/* Middle Section: Integrated Tour 360° */}
+        <div id="tour-section" className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[550px] relative z-10 px-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full bg-forest-dark/95 backdrop-blur-md border border-accent/40 md:border-accent/30 p-6 md:p-8 rounded-lg shadow-2xl relative overflow-hidden text-white mx-auto sm:max-w-md lg:max-w-none"
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+            className="w-full h-full bg-forest-dark/95 backdrop-blur-md border-2 border-accent/20 hover:border-accent/40 rounded-lg shadow-2xl relative overflow-hidden transition-all"
           >
-            {/* Top gold line */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 md:h-1 bg-gradient-to-r from-accent via-accent-hover to-accent" />
+            {/* Top gold details */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent-hover to-accent z-20" />
+            
+            <iframe 
+              src="https://tour.fotoestudio360.com.br/KzUniko/" 
+              className="w-full h-full border-none relative z-10" 
+              title="Tour Virtual 360° Uniko" 
+              allowFullScreen
+            />
+          </motion.div>
+        </div>
 
-            {/* Form Header */}
-            <div className="mb-6 md:mb-6 space-y-3 md:space-y-3 text-center md:text-left">
-              <h2 className="text-xl md:text-[22px] font-bold font-serif text-white tracking-wide leading-tight">
-                Preencha para Acessar Informações Exclusivas: Plantas, Análise de Payback e Condições Especiais de Lançamento.
-              </h2>
-              <span className="inline-block text-[10px] md:text-[11px] bg-red-500/20 text-red-100 px-3 py-1.5 md:py-1.5 rounded-sm uppercase tracking-wider font-extrabold font-montserrat shadow-sm border border-red-500/30">
-                Lote Restrito • Últimas Unidades Disponíveis. Garanta sua Prioridade.
-              </span>
-            </div>
-
-            {/* Entry Form */}
-            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-4">
-              
-              {/* Contact preference */}
-              <div className="space-y-2 md:space-y-1.5 text-left">
-                <label className="block text-[10px] font-semibold uppercase tracking-wider text-accent font-montserrat">
-                  Preferencia de Envio das Tabelas:
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {[
-                    { id: 'whatsapp', label: 'WhatsApp' },
-                    { id: 'phone', label: 'Ligação' },
-                    { id: 'email', label: 'E-mail' }
-                  ].map((pref) => (
-                    <button
-                      key={pref.id}
-                      type="button"
-                      onClick={() => setContactPreference(pref.id)}
-                      className={`py-3 md:py-2 px-1 text-center text-xs font-bold rounded-sm border transition-all cursor-pointer ${
-                        contactPreference === pref.id
-                          ? 'bg-accent/20 border-accent text-accent font-extrabold shadow-sm'
-                          : 'bg-forest-light/10 md:bg-transparent border-forest-light/40 text-slate-300 hover:border-slate-400'
-                      }`}
-                    >
-                      {pref.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
+        {/* Bottom Section: Form to Contact Broker */}
+        <div id="lead-form-box" className="w-full max-w-2xl bg-forest-dark/95 backdrop-blur-md border border-accent/20 p-5 md:p-6 rounded-md shadow-xl text-left relative z-20 mt-4 mx-4">
+          <h3 className="text-xs sm:text-sm font-bold text-white mb-4 font-montserrat uppercase tracking-wider text-center border-b border-accent/10 pb-3">
+            Preencha para faturar condições exclusivas e falar com um corretor:
+          </h3>
+          
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Input Name */}
-              <div className="space-y-1.5 md:space-y-1 text-left">
-                <label className="block text-[11px] md:text-[10px] font-semibold uppercase tracking-wider text-slate-300 md:text-slate-400 font-montserrat">
-                  Seu Nome Completo
+              <div className="space-y-1">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 font-montserrat">
+                  Nome Completo
                 </label>
                 <input
                   type="text"
@@ -300,45 +259,20 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
                     if (errors.name) setErrors({ ...errors, name: undefined });
                   }}
                   disabled={loading}
-                  className={`w-full px-4 py-3.5 md:py-2.5 text-sm md:text-sm bg-forest-light/30 md:bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:bg-forest-light/40 md:focus:bg-forest-light/35 focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-400 md:placeholder:text-slate-500 ${
+                  className={`w-full px-3 py-2 text-xs bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:ring-1 focus:ring-accent transition-all ${
                     errors.name ? 'border-accent' : 'border-forest-light/40 focus:border-accent'
                   }`}
                 />
                 {errors.name && (
-                  <p className="text-[11px] text-accent flex items-center gap-1.5 mt-1 font-medium">
-                    <AlertCircle size={12} /> {errors.name}
-                  </p>
-                )}
-              </div>
-
-              {/* Input Email */}
-              <div className="space-y-1.5 md:space-y-1 text-left">
-                <label className="block text-[11px] md:text-[10px] font-semibold uppercase tracking-wider text-slate-300 md:text-slate-400 font-montserrat">
-                  E-mail do Investidor
-                </label>
-                <input
-                  type="email"
-                  placeholder="seuemail@empresa.com.br"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (errors.email) setErrors({ ...errors, email: undefined });
-                  }}
-                  disabled={loading}
-                  className={`w-full px-4 py-3.5 md:py-2.5 text-sm md:text-sm bg-forest-light/30 md:bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:bg-forest-light/40 md:focus:bg-forest-light/35 focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-400 md:placeholder:text-slate-500 ${
-                    errors.email ? 'border-accent' : 'border-forest-light/40 focus:border-accent'
-                  }`}
-                />
-                {errors.email && (
-                  <p className="text-[11px] text-accent flex items-center gap-1.5 mt-1 font-medium">
-                    <AlertCircle size={12} /> {errors.email}
+                  <p className="text-[10px] text-accent flex items-center gap-1 mt-1 font-medium">
+                    <AlertCircle size={10} /> {errors.name}
                   </p>
                 )}
               </div>
 
               {/* Input Phone */}
-              <div className="space-y-1.5 md:space-y-1 text-left">
-                <label className="block text-[11px] md:text-[10px] font-semibold uppercase tracking-wider text-slate-300 md:text-slate-400 font-montserrat">
+              <div className="space-y-1">
+                <label className="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 font-montserrat">
                   WhatsApp com DDD
                 </label>
                 <input
@@ -350,70 +284,64 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
                     if (errors.phone) setErrors({ ...errors, phone: undefined });
                   }}
                   disabled={loading}
-                  className={`w-full px-4 py-3.5 md:py-2.5 text-sm md:text-sm bg-forest-light/30 md:bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:bg-forest-light/40 md:focus:bg-forest-light/35 focus:ring-1 focus:ring-accent transition-all placeholder:text-slate-400 md:placeholder:text-slate-500 ${
+                  className={`w-full px-3 py-2 text-xs bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:ring-1 focus:ring-accent transition-all ${
                     errors.phone ? 'border-accent' : 'border-forest-light/40 focus:border-accent'
                   }`}
                 />
                 {errors.phone && (
-                  <p className="text-[11px] text-accent flex items-center gap-1.5 mt-1 font-medium">
-                    <AlertCircle size={12} /> {errors.phone}
+                  <p className="text-[10px] text-accent flex items-center gap-1 mt-1 font-medium">
+                    <AlertCircle size={10} /> {errors.phone}
                   </p>
                 )}
               </div>
-
-              {/* Planta filter selection as Radio Buttons */}
-              <div className="space-y-2.5 md:space-y-2 text-left pt-2 pb-2">
-                <label className="block text-[11px] md:text-[10px] font-semibold uppercase tracking-wider text-slate-300 md:text-slate-400 font-montserrat mb-1">
-                  Ativo de Maior Interesse:
-                </label>
-                <div className="space-y-2">
-                  {[
-                    { val: 'uniko', title: 'UNIKO Vila Olímpia' },
-                    { val: 'verus', title: 'VERUS Mackenzie' },
-                    { val: 'ambos', title: 'Ambos os Projetos' }
-                  ].map((option) => (
-                    <label key={option.val} className={`flex items-center gap-3 p-3 text-sm md:text-sm font-medium rounded-sm border cursor-pointer transition-all ${interest === option.val ? 'bg-forest-light/60 border-accent text-white shadow-sm' : 'bg-forest-light/20 border-forest-light/40 text-slate-300 hover:border-slate-400 hover:bg-forest-light/30'}`}>
-                      <input 
-                        type="radio" 
-                        name="propertyInterest"
-                        value={option.val}
-                        checked={interest === option.val}
-                        onChange={(e) => setInterest(e.target.value)}
-                        className="w-4 h-4 accent-accent shrink-0" 
-                      />
-                      <span>{option.title}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              {/* Submit button with golden glowing effect */}
-              <motion.button
-                whileHover={{ scale: 1.01, boxShadow: '0 0 15px rgba(196, 164, 125, 0.4)' }}
-                whileTap={{ scale: 0.99 }}
-                type="submit"
-                disabled={loading}
-                className="w-full py-4 md:py-3.5 px-6 mt-4 md:mt-2 bg-accent hover:bg-accent-hover text-forest-dark font-extrabold uppercase tracking-wider text-xs md:text-xs rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-all transition-colors shadow-lg"
-              >
-                {loading ? (
-                  <>
-                    <Loader2 size={18} className="animate-spin text-forest-dark shrink-0" />
-                    <span>Enviando ao Consultor...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>QUERO RECEBER O MEMORIAL DESCRITIVO</span>
-                    <ArrowRight size={16} className="shrink-0" />
-                  </>
-                )}
-              </motion.button>
-            </form>
-
-            <div className="mt-5 md:mt-4 flex flex-col sm:flex-row items-center justify-center gap-2 text-[10px] md:text-[10px] text-slate-400 font-light text-center">
-              <Shield size={13} className="text-accent shrink-0" />
-              <span>Seus dados confidenciais sob proteção total (LGPD).</span>
             </div>
-          </motion.div>
+
+            {/* Input Email */}
+            <div className="space-y-1">
+              <label className="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 font-montserrat">
+                E-mail do Investidor
+              </label>
+              <input
+                type="email"
+                placeholder="seuemail@empresa.com.br"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (errors.email) setErrors({ ...errors, email: undefined });
+                }}
+                disabled={loading}
+                className={`w-full px-3 py-2 text-xs bg-forest-light/20 border rounded-sm text-white focus:outline-none focus:ring-1 focus:ring-accent transition-all ${
+                  errors.email ? 'border-accent' : 'border-forest-light/40 focus:border-accent'
+                }`}
+              />
+              {errors.email && (
+                <p className="text-[10px] text-accent flex items-center gap-1 mt-1 font-medium">
+                  <AlertCircle size={10} /> {errors.email}
+                </p>
+              )}
+            </div>
+
+            {/* Submit button */}
+            <motion.button
+              whileHover={{ scale: 1.01, boxShadow: '0 0 12px rgba(196, 164, 125, 0.3)' }}
+              whileTap={{ scale: 0.99 }}
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 px-4 bg-accent hover:bg-accent-hover text-forest-dark font-extrabold uppercase tracking-wider text-[11px] rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-all transition-colors shadow-lg"
+            >
+              {loading ? (
+                <>
+                  <Loader2 size={14} className="animate-spin text-forest-dark shrink-0" />
+                  <span>Enviando ao Consultor...</span>
+                </>
+              ) : (
+                <>
+                  <span>Garantir Condições e Falar com Corretores</span>
+                  <ArrowRight size={14} className="shrink-0" />
+                </>
+              )}
+            </motion.button>
+          </form>
         </div>
 
       </div>

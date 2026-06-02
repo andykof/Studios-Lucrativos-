@@ -68,8 +68,8 @@ function MainAppContent() {
       {/* Dynamic top notifications ribbon */}
       <div id="promo-bar" className="bg-accent text-forest-dark py-2 md:py-2.5 px-3 md:px-4 text-center text-[10px] sm:text-xs font-extrabold tracking-wide flex items-center justify-center gap-1.5 md:gap-2 font-montserrat shadow-sm">
         <Sparkles size={14} className="animate-pulse text-forest-dark animate-spin hidden sm:block" />
-        <span className="hidden sm:inline">ÚLTIMAS UNIDADES: INVISTA EM STUDIOS DE ALTA RENTABILIDADE NA VILA OLÍMPIA E MACKENZIE COM GESTÃO 100% NO AUTOMÁTICO.</span>
-        <span className="sm:hidden">LANÇAMENTO VILA OLÍMPIA & HIGIENÓPOLIS: ESTÚDIOS DE ALTA RENTABILIDADE.</span>
+        <span className="hidden sm:inline">ÚLTIMAS UNIDADES DETALHADAS: INVISTA EM STUDIOS DE ALTO PADRÃO NA VILA OLÍMPIA COM EXCELENTE CUSTO-BENEFÍCIO.</span>
+        <span className="sm:hidden">LANÇAMENTO VILA OLÍMPIA: STUDIOS DE ALTO PADRÃO PARA INVESTIMENTO.</span>
         <a href="#hero" className="underline hover:text-white transition-colors uppercase font-mono ml-1 hidden lg:inline">SOLICITAR ATENDIMENTO</a>
       </div>
 
@@ -87,7 +87,7 @@ function MainAppContent() {
                 STUDIOS <span className="text-accent ml-0 sm:ml-0.5">LUCRATIVOS</span>
               </span>
               <span className="block text-[7.5px] sm:text-[8px] text-slate-400 font-mono tracking-widest uppercase mt-0 sm:-mt-0.5">
-                Vila Olímpia & Higienópolis
+                Vila Olímpia
               </span>
             </div>
           </a>
