@@ -1132,6 +1132,173 @@
 
         /* 
         ------------------------------------------
+           SIMULATOR SECTION
+        ------------------------------------------
+        */
+        .simulator-section {
+            background-color: var(--color-bg-dark);
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        @media (min-width: 768px) {
+            .simulator-section {
+                padding: 6rem 1.5rem;
+            }
+        }
+
+        .simulator-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-bg-panel);
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .simulator-header {
+            background: #000;
+            color: #fff;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .simulator-header h2 {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .simulator-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .simulator-header p {
+            color: #aaa;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .simulator-body {
+            padding: 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .simulator-body {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                padding: 3rem;
+            }
+        }
+
+        .simulator-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sim-control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .sim-control-group label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--color-text-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        
+        @media (min-width: 480px) {
+            .sim-control-group label {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .sim-control-group label span {
+            color: var(--color-text-dark-muted);
+            font-weight: normal;
+        }
+
+        .sim-control-group input[type="range"] {
+            width: 100%;
+            accent-color: #000;
+            height: 6px;
+            background: #e5e5e5;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .sim-control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .simulator-results {
+            background: var(--color-bg-gray);
+            padding: 2rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+        }
+
+        .result-item {
+            margin-bottom: 2rem;
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--color-text-dark-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .sim-disclaimer {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+            border-top: 1px solid var(--color-border);
+            padding-top: 1.5rem;
+        }
+
+        /* 
+        ------------------------------------------
            FORM SECTION (Redirecionamento WhatsApp) 
         ------------------------------------------
         */
@@ -1263,6 +1430,55 @@
         </div>
 
     </header>
+
+    <!-- SIMULADOR SECTION -->
+    <section class="simulator-section" id="simulador">
+        <div class="simulator-container reveal-on-scroll">
+            <div class="simulator-header">
+                <h2>Simulador de Rentabilidade</h2>
+                <p>Estime o potencial de retorno do seu investimento na Vila Olímpia (Short-Stay)</p>
+            </div>
+            <div class="simulator-body">
+                <div class="simulator-controls">
+                    
+                    <div class="sim-control-group">
+                        <label>Planta <span id="lbl-planta">Studio 24m²</span></label>
+                        <select id="sim-planta" class="form-input" style="padding: 0.8rem; background: #fff; border: 1px solid var(--color-border); border-radius: 4px;" onchange="app.calcSimulator()">
+                            <option value="24" data-name="Studio 24m²">Studio - 24m²</option>
+                            <option value="29" data-name="1 Dormitório 29m²">1 Dormitório - 29m²</option>
+                            <option value="34" data-name="2 Dormitórios 34m²">2 Dormitórios - 34m²</option>
+                        </select>
+                    </div>
+
+                    <div class="sim-control-group">
+                        <label>Valor Médio da Diária <span id="lbl-diaria">R$ 350</span></label>
+                        <input type="range" id="sim-diaria" min="200" max="800" step="10" value="350" oninput="app.calcSimulator()">
+                    </div>
+
+                    <div class="sim-control-group">
+                        <label>Taxa de Ocupação Mensal <span id="lbl-ocupacao">70% (21 dias)</span></label>
+                        <input type="range" id="sim-ocupacao" min="30" max="100" step="5" value="70" oninput="app.calcSimulator()">
+                    </div>
+
+                </div>
+                
+                <div class="simulator-results">
+                    <div class="result-item">
+                        <div class="result-label">Receita Bruta Estimada / Mês</div>
+                        <div class="result-value" id="res-mes">R$ 7.350,00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Receita Bruta Estimada / Ano</div>
+                        <div class="result-value" style="color: var(--color-gold);" id="res-ano">R$ 88.200,00</div>
+                    </div>
+                    
+                    <div class="sim-disclaimer">
+                        *Valores são simulações baseadas em estimativas de mercado para locação short-stay na região da Vila Olímpia e não representam garantia de rentabilidade ou promessa de ganhos por parte da construtora.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FORM SECTION -->
     <section id="section-form">
@@ -1592,6 +1808,39 @@
                 
                 setTimeout(() => document.getElementById('nome').focus(), 600);
             }
+            
+            function calcSimulator() {
+                const plantaSelect = document.getElementById('sim-planta');
+                if (!plantaSelect) return;
+                
+                const selectedOption = plantaSelect.options[plantaSelect.selectedIndex];
+                const lblPlanta = document.getElementById('lbl-planta');
+                
+                const simDiaria = document.getElementById('sim-diaria');
+                const lblDiaria = document.getElementById('lbl-diaria');
+                
+                const simOcupacao = document.getElementById('sim-ocupacao');
+                const lblOcupacao = document.getElementById('lbl-ocupacao');
+                
+                // Update Labels
+                if (lblPlanta) lblPlanta.textContent = selectedOption.getAttribute('data-name');
+                if (lblDiaria) lblDiaria.textContent = "R$ " + parseInt(simDiaria.value).toLocaleString('pt-BR');
+                
+                // 30 days month approx
+                const diasOcupados = Math.round(30 * (parseInt(simOcupacao.value) / 100));
+                if (lblOcupacao) lblOcupacao.textContent = simOcupacao.value + "% (" + diasOcupados + " dias)";
+                
+                // Calculate
+                const receitaMes = parseInt(simDiaria.value) * diasOcupados;
+                const receitaAno = receitaMes * 12;
+                
+                // Display
+                const resMes = document.getElementById('res-mes');
+                const resAno = document.getElementById('res-ano');
+                
+                if (resMes) resMes.textContent = "R$ " + receitaMes.toLocaleString('pt-BR') + ",00";
+                if (resAno) resAno.textContent = "R$ " + receitaAno.toLocaleString('pt-BR') + ",00";
+            }
 
             // --- Mascaramento do input de Telefone ---
             function maskPhone(input) {
@@ -1802,6 +2051,7 @@
                 nextImage,
                 prevImage,
                 actionScrollToForm,
+                calcSimulator,
                 submitToWhatsApp,
                 maskPhone,
                 nextUnikoInlineImage,
