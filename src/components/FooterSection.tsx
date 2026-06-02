@@ -60,13 +60,13 @@ export default function FooterSection({ onOpenAdmin, onOpenPrivacy }: FooterSect
             <ul className="space-y-3 font-sans font-light">
               <li>
                 <a
-                  href="https://wa.me/5511959568043"
+                  href="https://wa.me/5511961716766"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-2.5 hover:text-accent transition-colors font-bold text-slate-300 font-montserrat text-sm"
                 >
                   <Phone size={14} className="text-accent" />
-                  +55 (11) 95956-8043
+                  +55 (11) 96171-6766
                 </a>
               </li>
               <li>

@@ -103,7 +103,7 @@ function MainAppContent() {
 
           {/* Call shortcut */}
           <a
-            href="https://wa.me/5511959568043"
+            href="https://wa.me/5511961716766"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-black uppercase tracking-wider sm:tracking-widest bg-accent hover:bg-accent-hover text-forest-dark px-3 sm:px-5 py-2 sm:py-2.5 rounded-sm transition-all shadow-md cursor-pointer text-center font-montserrat shrink-0"

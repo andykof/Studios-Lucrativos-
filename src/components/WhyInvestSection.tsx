@@ -107,7 +107,7 @@ export default function WhyInvestSection() {
                           {unit.description}
                         </p>
                         <a
-                          href="https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20receber%20a%20análise%20de%20payback%20e%20estudo%20de%20rentabilidade."
+                          href="https://wa.me/5511961716766?text=Olá!%20Gostaria%20de%20receber%20a%20análise%20de%20payback%20e%20estudo%20de%20rentabilidade."
                           target="_blank"
                           rel="noreferrer"
                           className="inline-flex items-center gap-1 text-[10px] xl:text-[11px] font-bold font-montserrat text-accent hover:text-accent-hover uppercase tracking-wider cursor-pointer pt-1"
@@ -153,7 +153,7 @@ export default function WhyInvestSection() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20falar%20com%20um%20corretor%20sobre%20os%20studios%20disponíveis."
+            href="https://wa.me/5511961716766?text=Olá!%20Gostaria%20de%20falar%20com%20um%20corretor%20sobre%20os%20studios%20disponíveis."
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto inline-flex justify-center items-center sm:inline-block px-8 sm:px-12 py-4 sm:py-5 bg-forest text-white hover:bg-forest-light text-xs sm:text-sm font-bold font-montserrat uppercase tracking-[0.15em] sm:tracking-[0.2em] rounded-sm shadow-lg hover:shadow-xl transition-all cursor-pointer"

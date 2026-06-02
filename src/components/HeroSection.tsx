@@ -106,7 +106,7 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
 🏢 *Ativo de Interesse:* ${propertyLabel}
 💬 *Preferência de Contato:* ${preferenceLabel}`;
 
-      const whatsappUrl = `https://wa.me/5511959568043?text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappUrl = `https://wa.me/5511961716766?text=${encodeURIComponent(whatsappMessage)}`;
       
       // Open WhatsApp in a new tab/window
       window.open(whatsappUrl, '_blank');
@@ -180,13 +180,13 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
               </span>
             </div>
             <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight font-serif leading-[1.1] md:leading-[1.15]">
-              Desvende o Segredo dos Investidores de Sucesso: <br className="hidden md:block" />
+              Sua Próxima Grande Oportunidade: <br className="hidden md:block" />
               <span className="font-extrabold font-montserrat text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-accent">
                 Studios de Alto Padrão
-              </span> com Rentabilidade Garantida em SP.
+              </span> nos Polos de Maior Demanda de SP.
             </h1>
             <p className="text-slate-300 text-[15px] sm:text-sm md:text-base max-w-xl leading-relaxed font-sans font-light pt-2">
-              Somos a <strong className="text-white font-bold">parceria oficial de vendas</strong> Kallas. Fale com nossa <strong className="text-accent font-bold">consultoria especializada</strong> e garanta acesso a <strong className="text-white font-bold">condições exclusivas de lançamento</strong>. Maximize seu patrimônio com o portfólio restrito UNIKO e VERUS.
+              Somos a <strong className="text-white font-bold">parceria oficial de vendas</strong> Kallas. Fale com nossa <strong className="text-accent font-bold">consultoria especializada</strong> e garanta acesso a <strong className="text-white font-bold">condições exclusivas de lançamento</strong>. Fortaleça seu patrimônio com o portfólio restrito UNIKO e VERUS.
             </p>
           </div>
           
@@ -195,10 +195,10 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
             {/* UNIKO Block */}
             <div className="flex flex-col space-y-2.5 bg-forest-dark/60 backdrop-blur-sm p-5 md:p-6 rounded-md border border-accent/20 md:border-forest-light/40 shadow-sm transition-all hover:border-accent/50">
               <h3 className="text-base sm:text-lg md:text-xl font-black font-montserrat tracking-tight text-accent leading-snug">
-                UNIKO Vila Olímpia: A Estratégia Faria Lima para seu Patrimônio.
+                UNIKO Vila Olímpia: Posicionamento Inteligente no Centro Corporativo.
               </h3>
               <p className="text-[13px] md:text-sm text-slate-300 font-light leading-relaxed">
-                <span className="font-bold text-white">A partir de R$ 275k.</span> Posicione seu capital no coração financeiro de São Paulo. Demanda corporativa ininterrupta garante seu financiamento e rentabilidade superior em short stay. Um ativo Kallas com retorno comprovado.
+                <span className="font-bold text-white">A partir de R$ 275k.</span> Posicione seu patrimônio no coração financeiro de São Paulo. A forte demanda corporativa na região oferece excelente potencial para locação por temporada (short stay) e liquidez em uma das localizações mais disputadas da cidade.
               </p>
               <button 
                 onClick={() => scrollToSection('plantas')} 
@@ -211,10 +211,10 @@ export default function HeroSection({ onSuccess, preselectedProperty = 'uniko' }
             {/* VERUS Block */}
             <div className="flex flex-col space-y-2.5 bg-forest-dark/60 backdrop-blur-sm p-5 md:p-6 rounded-md border border-slate-300/20 md:border-forest-light/40 shadow-sm transition-all hover:border-slate-300/50">
               <h3 className="text-base sm:text-lg md:text-xl font-black font-montserrat tracking-tight text-white leading-snug">
-                VERUS Mackenzie: A Distorção de Mercado em Higienópolis.
+                VERUS Mackenzie: Custo-Benefício Premium no Eixo Higienópolis.
               </h3>
               <p className="text-[13px] md:text-sm text-slate-300 font-light leading-relaxed">
-                <span className="font-bold text-accent">R$ 13.900 o m².</span> Invista em uma localização com vacância histórica zero, impulsionada pelo polo universitário e de saúde. A segurança e valorização que só um empreendimento Kallas pode oferecer.
+                <span className="font-bold text-accent">R$ 13.900 o m².</span> Adquira um ativo imobiliário estratégico, vizinho do Mackenzie, PUC-SP e complexos hospitalares. Uma região madura que combina alta demanda residencial de locação e valorização de longo prazo.
               </p>
               <button 
                 onClick={() => scrollToSection('plantas')} 

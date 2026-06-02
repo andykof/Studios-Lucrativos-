@@ -197,7 +197,7 @@ export default function PropertyDetailSection({ onPropertySelect }: PropertyDeta
             {/* Plan switcher manual buttons navigation */}
             <div className="flex items-center gap-4 pt-6 sm:pt-4 w-full">
               <a
-                href={`https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20Técnico%20e%20Memorial%20com%20Condições%20Exclusivas%20da%20planta%20${encodeURIComponent(selectedPlan.title)}.`}
+                href={`https://wa.me/5511961716766?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20Técnico%20e%20Memorial%20com%20Condições%20Exclusivas%20da%20planta%20${encodeURIComponent(selectedPlan.title)}.`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-4 md:py-4 px-6 bg-accent hover:bg-accent-hover text-forest-dark text-xs sm:text-xs font-bold uppercase tracking-[0.1em] sm:tracking-wider rounded-sm text-center shadow-lg transition-transform active:scale-95 cursor-pointer font-montserrat"

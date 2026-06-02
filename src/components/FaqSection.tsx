@@ -92,7 +92,7 @@ export default function FaqSection() {
             Tem outra dúvida específica sobre planos de obras ou memorial descritivo?
           </p>
           <a
-            href="https://wa.me/5511959568043?text=Olá!%20Estava%20visualizando%20as%20especificações%20dos%20Studios%20Lucrativos%20e%20gostaria%20de%20esclarecer%20uma%20dúvida%20específica."
+            href="https://wa.me/5511961716766?text=Olá!%20Estava%20visualizando%20as%20especificações%20dos%20Studios%20Lucrativos%20e%20gostaria%20de%20esclarecer%20uma%20dúvida%20específica."
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider bg-accent hover:bg-accent-hover text-forest-dark py-4 sm:py-3.5 px-6 rounded-sm transition-colors cursor-pointer font-montserrat shadow-md"

@@ -171,7 +171,7 @@ export default function LocationSection() {
 
             {/* Directions button directly matching the button inside screenshot bottom */}
             <a
-              href="https://wa.me/5511959568043?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20dos%20Bairros%20(Vila%20Olímpia%20e%20Higienópolis)%20e%20o%20estudo%20de%20Payback."
+              href="https://wa.me/5511961716766?text=Olá!%20Gostaria%20de%20receber%20o%20Book%20dos%20Bairros%20(Vila%20Olímpia%20e%20Higienópolis)%20e%20o%20estudo%20de%20Payback."
               target="_blank"
               rel="noreferrer"
               className="w-full mt-10 md:mt-8 py-4 sm:py-3.5 bg-forest hover:bg-forest-light text-white text-xs font-bold font-montserrat uppercase tracking-[0.1em] sm:tracking-[0.15em] rounded-sm flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-md"
