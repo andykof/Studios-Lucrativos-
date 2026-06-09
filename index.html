@@ -1116,34 +1116,64 @@
         }
       }
 
+      /* BOTAO FLUTUANTE WHATSAPP (Mobile, Tablet, Desktop) */
       .sticky-whatsapp {
-        display: none;
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        z-index: 9998;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
-      @media (max-width: 767px) {
-        .sticky-whatsapp {
-          display: flex;
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color: #25d366;
-          color: white;
-          border-radius: 50%;
-          width: 55px;
-          height: 55px;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-          z-index: 9998;
-          transition:
-            transform 0.3s,
-            background-color 0.3s;
-        }
+      /* Efeito de pulso profissional interativo */
+      .sticky-whatsapp::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #25d366;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.7;
+        animation: wa-pulse 2s infinite ease-out;
+      }
 
-        .sticky-whatsapp:hover {
-          transform: scale(1.05);
-          background-color: #1ebe55;
+      @keyframes wa-pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      .sticky-whatsapp:hover {
+        transform: scale(1.1) translateY(-3px);
+        background-color: #1ebe55;
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+      }
+
+      @media (min-width: 768px) {
+        .sticky-whatsapp {
+          bottom: 30px;
+          right: 30px;
+          width: 65px;
+          height: 65px;
         }
       }
 
@@ -1718,7 +1748,6 @@
               id="nome"
               class="form-input"
               placeholder="Digite seu nome completo..."
-              required
             />
           </div>
 
@@ -1729,7 +1758,6 @@
               id="telefone"
               class="form-input"
               placeholder="(11) 99999-9999"
-              required
               oninput="app.maskPhone(this)"
             />
           </div>
@@ -1738,7 +1766,7 @@
             <label class="form-label" for="planta"
               >Qual planta do empreendimento?</label
             >
-            <select id="planta" class="form-input" required>
+            <select id="planta" class="form-input">
               <option value="" disabled selected>Selecione uma opção...</option>
               <option value="Studio - 24m²">Studio - 24m²</option>
               <option value="Apartamento 1 Dormitório - 28m²">
@@ -1757,7 +1785,7 @@
             <label class="form-label" for="objetivo"
               >Qual o seu objetivo na compra?</label
             >
-            <select id="objetivo" class="form-input" required>
+            <select id="objetivo" class="form-input">
               <option value="" disabled selected>
                 Selecione seu objetivo...
               </option>
@@ -2333,11 +2361,14 @@
         function actionScrollToForm(preSelectedProject) {
           closeModal();
 
-          // Direciona fluidamente
-          const formSection = document.getElementById("section-form");
-          formSection.scrollIntoView({ behavior: "smooth" });
-
-          setTimeout(() => document.getElementById("nome").focus(), 600);
+          let msg = "Olá! Gostaria de saber mais informações sobre o Uniko Vila Olímpia.";
+          if (preSelectedProject) {
+              msg = `Olá! Gostaria de saber mais informações sobre: ${preSelectedProject}`;
+          }
+          
+          const whatsappNumber = "5511961716766";
+          const encodedMessage = encodeURIComponent(msg);
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
         }
 
         function calcSimulator() {
@@ -2419,12 +2450,10 @@
         function submitToWhatsApp(event) {
           event.preventDefault();
 
-          const nome = document.getElementById("nome").value.trim();
-          const telefone = document.getElementById("telefone").value.trim();
-          const planta = document.getElementById("planta").value;
-          const objetivo = document.getElementById("objetivo").value;
-
-          if (!nome || !telefone || !planta || !objetivo) return;
+          const nome = document.getElementById("nome").value.trim() || "não informado";
+          const telefone = document.getElementById("telefone").value.trim() || "não informado";
+          const planta = document.getElementById("planta").value || "não informada";
+          const objetivo = document.getElementById("objetivo").value || "não informado";
 
           const rawMessage = `Olá! Meu nome é *${nome}*, meu contato é *${telefone}* e tenho interesse na planta *${planta}* do *Uniko Vila Olímpia*. Meu objetivo de compra é para *${objetivo}*. Gostaria de saber mais informações.`;
 
